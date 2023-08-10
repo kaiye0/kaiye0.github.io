@@ -1,255 +1,699 @@
 <!DOCTYPE html>
-<html lang="en">
+    <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <link rel="stylesheet" href="assets/css/styles.css">
 
         <!-- =====BOX ICONS===== -->
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
         <!--==================== UNICONS ====================-->
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+        
+        <!--==================== SWIPER CSS ====================-->
+        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+        
+        <!--==================== CSS ====================-->
+        <link rel="stylesheet" href="assets/css/styles.css">
 
+        <!--==================== ICON ====================-->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico" />
 
         <title>Kai Ye @NC State</title>
     </head>
     <body>
-        <!--===== HEADER =====-->
-        <header class="l-header">
-            <nav class="nav bd-grid">
-                <div>
-                    <a href="#" class="nav__logo">Kai Ye @NC State University</a>
-                </div>
+        <!--==================== HEADER ====================-->
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="#" class="nav__logo">Kai Ye @NC State University</a>
 
                 <div class="nav__menu" id="nav-menu">
-                    <ul class="nav__list">
+                    <ul class="nav__list grid">
                         <li class="nav__item">
-                            <a href="#home" class="nav__link active">
-                                <i class='bx bx-home-alt' nav__icon></i> Home
+                            <a href="#home" class="nav__link" active-link>
+                                <i class="uil uil-estate" nav__icon></i> Home
                             </a>
                         </li>
                         <li class="nav__item">
                             <a href="#about" class="nav__link">
-                                <i class="bx bx-user" nav__icon></i> About
+                                <i class="uil uil-user" nav__icon></i> About
                             </a>
                         </li>
                         <li class="nav__item">
                             <a href="#skills" class="nav__link">
-                                <i class="bx bx-file" nav__icon></i> Skills
+                                <i class="uil uil-file-alt" nav__icon></i> Skills
                             </a>
                         </li>
                         <li class="nav__item">
-                            <a href="#work" class="nav__link">
-                                <i class="bx bx-briefcase-alt-2" nav__icon></i> Work
+                            <a href="#qualification" class="nav__link">
+                                <i class="uil uil-book-alt" nav__icon></i> Education
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#portfolio" class="nav__link">
+                                <i class="uil uil-briefcase-alt" nav__icon></i> Work
                             </a>
                         </li>
                         <li class="nav__item">
                             <a href="#contact" class="nav__link">
-                                <i class="bx bx-chat" nav__icon></i> Contact me
+                                <i class="uil uil-message" nav__icon></i> Contact me
                             </a>
                         </li>
                     </ul>
+                    <i class="uil uil-times nav__close" id="nav-close"></i> 
                 </div>
 
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class='bx bx-menu'></i>
+                <div class="nav__btns">
+                    <!-- Theme Change button -->
+                    <i class="bx bx-moon change-theme" id="theme-button"></i> 
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="uil uil-apps"></i> 
+                    </div>
                 </div>
-            </nav>
+            </nav>    
         </header>
 
-        <main class="l-main">
-            <!--===== HOME =====-->
-            <section class="home bd-grid" id="home">
-                <div class="home__data">
-                    <!-- <h1 class="home__title">Hi, I am <span class="home__title-color">Kai</span> <br> PhD Candidate <br>at <a href="https://sites.google.com/a/ncsu.edu/ninglu/gridwrx-lab" target="_blank" style="color: var(--first-color);">GridWrx Lab</a></h1> -->
-                    <h1 class="home__title">Hi, I'm Kai Ye</h1>
-                    <h3 class="home__subtitle">PhD candidate at NC State University  </h3>
-                    <a href="https://github.com/leaf-open/Resume/blob/main/KaiYe_latest.pdf" target="_blank" style="color:var(--first-color);" class="home__subtitle">My Lastest Curriculum Vitae <br>  <br>  </a>
-                    <br>
-                    <!-- <h3 class=""home__subtitle>  </h3> -->
-                    <!-- <p class="home__description">High level experience in data-driven load modeling and optimizing dispacth of distributed energy resources.</p> -->
-                    <a href="mailto: kye3@ncsu.edu" target="_blank" class="button">Contact</a>
-                </div>
+        <!--==================== MAIN ====================-->
+        <main class="main">
+            <!--==================== HOME ====================-->
+            <section class="home section" id="home">
+                <div class="home__container container grid">
+                    <div class="home__content grid">
+                        <div class="home__social">
+                            <a href="https://www.linkedin.com/in/ykai/" target="_blank" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
+                            <a href="https://github.com/leaf-open" target="_blank" class="home__social-icon"><i class='bx bxl-github' ></i></a>
+                            <a href="wechat://dl/chat?{leafopen}" target="_blank" class="home__social-icon"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M21.502 19.525c1.524-1.105 2.498-2.738 2.498-4.554 0-3.326-3.237-6.023-7.229-6.023s-7.229 2.697-7.229 6.023c0 3.327 3.237 6.024 7.229 6.024.825 0 1.621-.117 2.36-.33l.212-.032c.139 0 .265.043.384.111l1.583.914.139.045c.133 0 .241-.108.241-.241l-.039-.176-.326-1.215-.025-.154c0-.162.08-.305.202-.392zm-12.827-17.228c-4.791 0-8.675 3.236-8.675 7.229 0 2.178 1.168 4.139 2.997 5.464.147.104.243.276.243.471l-.03.184-.391 1.458-.047.211c0 .16.13.29.289.29l.168-.054 1.899-1.097c.142-.082.293-.133.46-.133l.255.038c.886.255 1.842.397 2.832.397l.476-.012c-.188-.564-.291-1.158-.291-1.771 0-3.641 3.542-6.593 7.911-6.593l.471.012c-.653-3.453-4.24-6.094-8.567-6.094zm5.686 11.711c-.532 0-.963-.432-.963-.964 0-.533.431-.964.963-.964.533 0 .964.431.964.964 0 .532-.431.964-.964.964zm4.82 0c-.533 0-.964-.432-.964-.964 0-.533.431-.964.964-.964.532 0 .963.431.963.964 0 .532-.431.964-.963.964zm-13.398-5.639c-.639 0-1.156-.518-1.156-1.156 0-.639.517-1.157 1.156-1.157.639 0 1.157.518 1.157 1.157 0 .638-.518 1.156-1.157 1.156zm5.783 0c-.639 0-1.156-.518-1.156-1.156 0-.639.517-1.157 1.156-1.157.639 0 1.157.518 1.157 1.157 0 .638-.518 1.156-1.157 1.156z"/></svg></i></a>
+                        </div>
 
-                <div class="home__social">
-                    <a href="https://www.linkedin.com/in/ykai/" target="_blank" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
-                    <a href="https://github.com/leaf-open" target="_blank" class="home__social-icon"><i class='bx bxl-github' ></i></a>
-                    <a href="wechat://dl/chat?{leafopen}" target="_blank" class="home__social-icon"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M21.502 19.525c1.524-1.105 2.498-2.738 2.498-4.554 0-3.326-3.237-6.023-7.229-6.023s-7.229 2.697-7.229 6.023c0 3.327 3.237 6.024 7.229 6.024.825 0 1.621-.117 2.36-.33l.212-.032c.139 0 .265.043.384.111l1.583.914.139.045c.133 0 .241-.108.241-.241l-.039-.176-.326-1.215-.025-.154c0-.162.08-.305.202-.392zm-12.827-17.228c-4.791 0-8.675 3.236-8.675 7.229 0 2.178 1.168 4.139 2.997 5.464.147.104.243.276.243.471l-.03.184-.391 1.458-.047.211c0 .16.13.29.289.29l.168-.054 1.899-1.097c.142-.082.293-.133.46-.133l.255.038c.886.255 1.842.397 2.832.397l.476-.012c-.188-.564-.291-1.158-.291-1.771 0-3.641 3.542-6.593 7.911-6.593l.471.012c-.653-3.453-4.24-6.094-8.567-6.094zm5.686 11.711c-.532 0-.963-.432-.963-.964 0-.533.431-.964.963-.964.533 0 .964.431.964.964 0 .532-.431.964-.964.964zm4.82 0c-.533 0-.964-.432-.964-.964 0-.533.431-.964.964-.964.532 0 .963.431.963.964 0 .532-.431.964-.963.964zm-13.398-5.639c-.639 0-1.156-.518-1.156-1.156 0-.639.517-1.157 1.156-1.157.639 0 1.157.518 1.157 1.157 0 .638-.518 1.156-1.157 1.156zm5.783 0c-.639 0-1.156-.518-1.156-1.156 0-.639.517-1.157 1.156-1.157.639 0 1.157.518 1.157 1.157 0 .638-.518 1.156-1.157 1.156z"/></svg></i></a>
-                </div>
+                        <div class="home__img">
+                            <svg class="home__blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <mask id="mask0" mask-type="alpha">
+                                    <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
+                                    130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
+                                    97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
+                                    0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
+                                </mask>
+                                <g mask="url(#mask0)">
+                                    <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
+                                    165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
+                                    129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
+                                    -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
+                                    <image class="home__blob-img" x="14" y="16" href="assets/img/perfil3.png"/>
+                                </g>
+                            </svg>                        
+                        </div>
 
-                <div class="home__img">
-                    <svg class="home__blob" viewBox="0 0 479 467" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        
-                        <mask id="mask0" mask-type="alpha">
-                            <!-- <image class="home__blob-img" href="assets/img/splash.png"/> -->
-                            <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
-                        
-                        </mask>
-                        <g mask="url(#mask0)">
-                            <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
+                        <div class="home__data">
+                            <h1 class="home__title">Hi, I'm Kai Ye</h1>
+                            <h3 class="home__subtitle">PhD candidate at NC State University  </h3>
+                            <!-- <a href="https://github.com/leaf-open/Resume/blob/main/KaiYe_latest.pdf" target="_blank" style="color:var(--first-color);" class="home__subtitle">My Lastest Curriculum Vitae <br>  <br>  </a> -->
+                            <!-- <p class="home__description">High level experience in data-driven load modeling and optimizing dispacth of distributed energy resources.</p> -->
+                            <a href="#contact" target="_blank" class="button button--flex">Contact Me <i class="uil uil-message button__icon"></i></a>
+                        </div>      
+                    </div>
+
+                    <!-- <div class="home__scroll">
+                        <a href="" class="home__scroll-button button--flex">
+                            <i class="uil uil-mouse-alt home__scroll-mouse"></i>
+                            <span class="home__scroll-name">Scroll down</span>
+                            <i class="uil uil-arrow-down home__scroll-arrow"></i>
+                        </a>
+                    </div> -->
+                </div>
+            </section>
+
+            <!--==================== ABOUT ====================-->
+            <section class="about section" id="about">
+                <h2 class="section__title">About</h2>
+                <span class="section__subtitle">My introduction</span>
+                <div class="about__container container grid">  
+                    <img src="assets/img/about.jpg" alt="" class="about__img">
+                    <div class="about__data">
+                        <p class="about__description">I'm a Ph.D. candidate in <a href="https://sites.google.com/a/ncsu.edu/ninglu/home" target="_blank" style="color:var(--text-color); font-weight: bold;">Dr. Ning Lu</a>'s group at <b>North Carolina State University</b>, Raleigh, NC, United States. My research currently focuses on smart grids integrated with renewables and data-driven load modeling. I've always been interested in the effective generation and dispatch of the renewables.</p>           
+                        <!-- <div class="about__info">
+                            <div>
+                                <span class="about__info-title">08+</span>
+                                <span class="about__info-name">Years <br> experience </span>
+                            </div>
+
+                            <div>
+                                <span class="about__info-title">20+</span>
+                                <span class="about__info-name">Completed <br> project </span>
+                            </div>
+
+                            <div>
+                                <span class="about__info-title">05+</span>
+                                <span class="about__info-name">Companies <br> worked </span>
+                            </div>
+                        </div> -->
+
+                        <div class="about__buttons">
+                            <a download="" href="Resume/KaiYe_latest.pdf" class="button button--flex button--small about__button">
+                                Download CV 
+                                <i class="uil uil-download-alt button_icon"></i>
+                            </a>
+                        </div>
+                    </div>     
+                </div>
+            </section>
+
+            <!--==================== PORTFOLIO ====================-->
+            <section class="portfolio section" id="portfolio">
+                <h2 class="section__title">Recent Work</h2>
+                <span class="section__subtitle">Most recent publications</span>
+
+
+                <div class="portfolio__container container swiper-container">
+                    <div class="swiper-wrapper">
+                        <!--==================== PORTFOLIO 1 ====================-->
+                        <div class="portfolio__content grid swiper-slide">
+                            <img src="assets/img/p6.png" alt="" class="portfolio__img">
+                            <div class="portfolio__data">
+                                <h3 class="portfolio__title">Machine learning based load disaggregation</h3>
+                                <h5 class="portfolio__subtitle">2023 IEEE PES GM, Best Paper Award</h5>
+                                <p class="portfolio__description">This paper presents a modified sequence-to-point (S2P) algorithm for disaggregating the heat, ventilation, and air conditioning (HVAC) load from the total building electricity consumption.</p>
+                                <a href="https://arxiv.org/abs/2212.04886" target="_blank" class="button button--flex button--small portfolio__button">
+                                    More
+                                    <i class="uil uil-arrow-right button__icon"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!--==================== PORTFOLIO 2 ====================-->
+                        <div class="portfolio__content grid swiper-slide">
+                            <img src="assets/img/p3.png" alt="" class="portfolio__img">
+                            <div class="portfolio__data">
+                                <h3 class="portfolio__title">Optimization based energy management</h3>
+                                <h5 class="portfolio__subtitle">2023 IEEE PES GM</h5>
+                                <p class="portfolio__description">This paper presents a coordinative demand charge mitigation (DCM) strategy for reducing electricity consumption during system peak periods.</p>
+                                <a href="https://arxiv.org/abs/2212.08535" target="_blank" class="button button--flex button--small portfolio__button">
+                                    More
+                                    <i class="uil uil-arrow-right button__icon"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!--==================== PORTFOLIO 3 ====================-->
+                        <div class="portfolio__content grid swiper-slide">
+                            <img src="assets/img/p2.png" alt="" class="portfolio__img">
+                            <div class="portfolio__data">
+                                <h3 class="portfolio__title">Optimization based load disaggregation</h3>
+                                <h5 class="portfolio__subtitle">2023 IEEE PES ISGT</h5>
+                                <p class="portfolio__description">This paper presents an independent component analysis (ICA) based unsupervised-learning method for HVAC load disaggregation using low-resolution smart meter data. </p>
+                                <a href="https://ieeexplore.ieee.org/abstract/document/10066402" target="_blank" class="button button--flex button--small portfolio__button">
+                                    More
+                                    <i class="uil uil-arrow-right button__icon"></i>
+                                </a>
+                            </div>
+                        </div>  
+                    </div>
+
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next">
+                        <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
+                    </div>
+
+                    <div class="swiper-button-prev">
+                        <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
+                    </div>
+
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+
+                </div>
+            </section>
+
+
+            <!--==================== QUALIFICATION ====================-->
+            <section class="qualification section" id="qualification">
+                <h2 class="section__title">Education</h2>
+                <span class="section__subtitle">My personal journey</span>
+
+                <div class="qualification_container container">
+                    <!-- <div class="qualification__tabs">
+                        <div class="qualification__button button--flex" qualification__active data-target="#education">
+                            <i class="uil uil-graduation-cap qualification__icon"></i>
+                            Eduction
+                        </div>
+
+                        <div class="qualification__button button--flex" data-target="#work">
+                            <i class="uil uil-graduation-cap qualification__icon"></i>
+                            Work
+                        </div>
+                    </div> -->
+
+                    <div class="qualification__sections">
+                        <!--==================== QUALIFICATION CENTENT 1 ====================-->
+                        <div class="qualification__content qualification__active" data-content id="education">
+                            <!--==================== QUALIFICATION 1 ====================-->
+                            <div class="qualification__data">
+                                <div>
+                                    <h3 class="qualification__title">BSc. in New Energy Science and Engineering</h3>
+                                    <span class="qualification__subtitle">CUHK-Shenzhen, China</span>
+                                    <div class="qualification__calendar">
+                                        <i class="uil uil-calendar-alt"></i>
+                                        2015 -2019
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <span class="qualification__rounder"></span>
+                                    <span class="qualification__line"></span>
+                                </div>
+
+                            </div>
+
+                            <!--==================== QUALIFICATION 2 ====================-->
+
+                            <div class="qualification__data">
+                                <div></div>
+
+                                <div>
+                                    <span class="qualification__rounder"></span>
+                                    <span class="qualification__line"></span>
+                                </div>
+
+                                <div>
+                                    <h3 class="qualification__title">MSc. in Electrical and Computer Engineering</h3>
+                                    <span class="qualification__subtitle">UMN-Twin Cities, U.S.</span>
+                                    <div class="qualification__calendar">
+                                        <i class="uil uil-calendar-alt"></i>
+                                        2019 -2020
+                                    </div>
+                                </div>
+                            </div>
+
                             
-                            <image class="home__blob-img" x="40" y="50" href="assets/img/perfil3.png"/>
-                        </g>
-                    </svg>
-                </div>
-            </section>
+                            <!--==================== QUALIFICATION 3 ====================-->
+                            <div class="qualification__data">
+                                <div>
+                                    <h3 class="qualification__title">Ph.D. Candidate in Electrical Engineering</h3>
+                                    <span class="qualification__subtitle">NC State-Raleigh, U.S.</span>
+                                    <div class="qualification__calendar">
+                                        <i class="uil uil-calendar-alt"></i>
+                                        2021 -
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="qualification__rounder"></span>
+                                    <span class="qualification__line"></span>
+                                </div>
+                            </div>
 
-            <!--===== ABOUT =====-->
-            <section class="about section " id="about">
-                <h2 class="section-title">About</h2>
+                           
+                            <!--==================== QUALIFICATION 4 ====================-->
+                            
 
-                <div class="about__container bd-grid">
-                    <div class="about__img">
-                        <img src="assets/img/about.jpg" alt="">
-                    </div>
+                            <!-- <div class="qualification__data">
+                                <div></div>
+
+                                <div>
+                                    <span class="qualification__rounder"></span>
+                                </div>
+
+                                <div>
+                                    <h3 class="qualification__title">Master in UI</h3>
+                                    <span class="qualification__subtitle">Peri - Institute</span>
+                                    <div class="qualification__calendar">
+                                        <i class="uil uil-calendar-alt"></i>
+                                        2019 -2021
+                                    </div>
+                                </div>
                     
-                    <div>
-                        <h2 class="about__subtitle">I'm Kai Ye</h2>
-                        <p class="about__text">I'm a Ph.D. candidate in <a href="https://sites.google.com/a/ncsu.edu/ninglu/home" target="_blank" style="color:black; font-weight: bold;">Dr. Ning Lu</a>'s group at <b>North Carolina State University</b>, Raleigh, NC, United States. My research currently focuses on smart grids integrated with renewables and data-driven load modeling. I've always been interested in the effective generation and dispatch of the renewables.</p>           
-                    </div>                                   
+                            </div> -->
+
+                        </div>
+
+                        <!--==================== QUALIFICATION CENTENT 2 ====================-->
+                        <div class="qualification__content" data-content id="work">
+                            <!--==================== QUALIFICATION 1 ====================-->
+                            <div class="qualification__data">
+                                <div>
+                                    <h3 class="qualification__title">Softward Engineer</h3>
+                                    <span class="qualification__subtitle">Mircosoft Peri</span>
+                                    <div class="qualification__calendar">
+                                        <i class="uil uil-calendar-alt"></i>
+                                        2009 -2014
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <span class="qualification__rounder"></span>
+                                    <span class="qualification__line"></span>
+                                </div>
+                                
+                            </div>
+                                
+
+                            <!--==================== QUALIFICATION 2 ====================-->
+                            <div class="qualification__data">
+                                <div></div>
+                                <div>
+                                    <span class="qualification__rounder"></span>
+                                    <span class="qualification__line"></span>
+                                </div>
+
+                                <div>
+                                    <h3 class="qualification__title">Computer Engineer</h3>
+                                    <span class="qualification__subtitle">Peri - University</span>
+                                    <div class="qualification__calendar">
+                                        <i class="uil uil-calendar-alt"></i>
+                                        2009 -2014
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--==================== QUALIFICATION 3 ====================-->
+                            <div class="qualification__data">
+                                <div>
+                                    <h3 class="qualification__title">Frontend Developer</h3>
+                                    <span class="qualification__subtitle">Apple Inc - Spain</span>
+                                    <div class="qualification__calendar">
+                                        <i class="uil uil-calendar-alt"></i>
+                                        2014 -2017
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <span class="qualification__rounder"></span>
+                                    <!-- <span class="qualification__line"></span> -->
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                    </div>
                 </div>
             </section>
 
-            <!--===== SKILLS =====-->
+            <!--==================== SKILLS ====================-->
             <section class="skills section" id="skills">
-                <h2 class="section-title">Skills</h2>
+                <h2 class="section__title">Skills</h2>
+                <span class="section__subtitle">My technical level</span>
 
-                <div class="skills__container bd-grid">          
+                <div class="skills__container container grid">
                     <div>
-                        <h2 class="skills__subtitle">Profesional Skills</h2>
-                        <ul>
-                            <li class="skills__text">· Optimization in the control of power grids integrated with renewables.</li>
-                            <li class="skills__text">· Machine learning in load modeling and dispatch of distributed energy resources.</li>
-                          </ul>
-                        <!-- <p class="skills__text">
-                        <br>· Optimization in the control of power grids integrated with renewables (Wind, PV).
-                        <br>· Machine learning in load modeling and dispatch of distributed energy resources.</p> -->
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bxl-python skills__icon'></i>
-                                <span class="skills__name">Programming: Python, MATLAB and C++.</span>
-                            </div>
-                            <!-- <div class="skills__bar skills__html">
+                        <!--==================== SKILLS 1====================-->
+                        <div class="skills__content skills__open">
+                            <div class="skills__header">
+                                <i class="uil uil-brackets-curly skills__icon"></i>
 
-                            </div> -->
-                            <!-- <div>
-                                <span class="skills__percentage">95%</span>
-                            </div> -->
+                                <div>
+                                    <h1 class="skills__title">Computer Science</h1>
+                                    <!-- <span class="skills__subtitle">Data analysis and machine learning</span> -->
+                                </div>
+
+                                <i class="uil uil-angle-down skills__arrow"></i>
+                            </div>
+
+                            <div class="skills__list grid">
+                                <div class="skills__data">
+                                    <div class="skills__titles">
+                                        <i class='bx bxl-python skills__icon'></i>
+                                        <h3 class="skills__name">Programing: Python, C++, MATLAB</h3>
+                                        <!-- <span class="skills__number">90%</span> -->
+                                    </div>
+                                    <!-- <div class="skills__bar">
+                                        <span class="skills__percentage skills__html"></span>
+                                    </div> -->
+                                </div>
+
+                                <div class="skills__data">
+                                    <div class="skills__titles">
+                                        <i class='bx bx-terminal skills__icon' ></i>
+                                        <h3 class="skills__name">Machine learning: Pytorch, Tensorflow</h3>
+                                        <!-- <span class="skills__number">80%</span> -->
+                                    </div>
+                                    <!-- <div class="skills__bar">
+                                        <span class="skills__percentage skills__css"></span>
+                                    </div> -->
+                                </div>
+
+                                <div class="skills__data">
+                                    <div class="skills__titles">
+                                        <i class='bx bx-data skills__icon'></i>
+                                        <h3 class="skills__name">Data Analytics: R</h3>
+                                        <!-- <span class="skills__number">60%</span> -->
+                                    </div>
+                                    <!-- <div class="skills__bar">
+                                        <span class="skills__percentage skills__js"></span>
+                                    </div> -->
+                                </div>
+
+                                
+                                <div class="skills__data">
+                                    <div class="skills__titles">
+                                        <i class='bx bx-git-branch skills__icon'></i>
+                                        <h3 class="skills__name">Collaborative software development: Linux, Git</h3>
+                                        <!-- <span class="skills__number">85%</span> -->
+                                    </div>
+                                    <!-- <div class="skills__bar">
+                                        <span class="skills__percentage skills__ux"></span>
+                                    </div> -->
+                                </div>
+
+                            </div>
                         </div>
-                        <div class="skills__data">
-                            <div class="skills__names">
+
+                        <!--==================== SKILLS 2====================-->
+                        <!-- <div class="skills__content skills__close">
+                            <div class="skills__header">
+                                <i class="uil uil-server-network skills__icon"></i>
+
+                                <div>
+                                    <h1 class="skills__title">Backend developer</h1>
+                                    <span class="skills__subtitle">More than 4 years</span>
+                                </div>
+
+                                <i class="uil uil-angle-down skills__arrow"></i>
+                            </div>
+
+                            <div class="skills__list grid">
+                                <div class="skills__data">
+                                    <div class="skills__titles">
+                                        <h3 class="skills__name">PHP</h3>
+                                        <span class="skills__number">80%</span>
+                                    </div>
+                                    <div class="skills__bar">
+                                        <span class="skills__percentage skills__php"></span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <div class="skills__titles">
+                                        <h3 class="skills__name">Mode Js</h3>
+                                        <span class="skills__number">80%</span>
+                                    </div>
+                                    <div class="skills__bar">
+                                        <span class="skills__percentage skills__node"></span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <div class="skills__titles">
+                                        <h3 class="skills__name">Firebase</h3>
+                                        <span class="skills__number">60%</span>
+                                    </div>
+                                    <div class="skills__bar">
+                                        <span class="skills__percentage skills__firebase"></span>
+                                    </div>
+                                </div>
+
+                                
+                                <div class="skills__data">
+                                    <div class="skills__titles">
+                                        <h3 class="skills__name">Python</h3>
+                                        <span class="skills__number">85%</span>
+                                    </div>
+                                    <div class="skills__bar">
+                                        <span class="skills__percentage skills__python"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+
+                    <div>
+                        <!--==================== SKILLS 3====================-->
+                        <div class="skills__content skills__open">
+                            <div class="skills__header">
                                 <i class='bx bx-plug skills__icon'></i>
-                                <span class="skills__name">Power system modeling: OpenDSS, PSS/E</span>
+
+                                <div>
+                                    <h1 class="skills__title">Power Engineering</h1>
+                                    <!-- <span class="skills__subtitle">Power system modeling</span> -->
+                                </div>
+
+                                <i class="uil uil-angle-down skills__arrow"></i>
                             </div>
-                            <!-- <div class="skills__bar skills__css">
+
+                            <div class="skills__list grid">
+                                <div class="skills__data">
+                                    <div class="skills__titles">
+                                        <i class="uil uil-circuit skills__icon"></i>
+                                        <h3 class="skills__name">OpenDSS</h3>
+                                        <!-- <span class="skills__number">80%</span> -->
+                                    </div>
+                                    <div class="skills__bar">
+                                        <span class="skills__percentage skills__figma"></span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <div class="skills__titles">
+                                        <i class="uil uil-bolt-alt skills__icon"></i>
+                                        <h3 class="skills__name">PSS/E</h3>
+                                        <!-- <span class="skills__number">80%</span> -->
+                                    </div>
+                                    <div class="skills__bar">
+                                        <span class="skills__percentage skills__sketch"></span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <div class="skills__titles">
+                                        <i class="uil uil-laptop-connection skills__icon"></i>
+                                        <h3 class="skills__name">MATLAB - Simulink</h3>
+                                        <!-- <span class="skills__number">60%</span> -->
+                                    </div>
+                                    <div class="skills__bar skills__icon">
+                                        <span class="skills__percentage skills__photoshop"></span>
+                                    </div>
+                                </div>
+
                                 
-                            </div> -->
-                            <!-- <div>
-                                <span class="skills__percentage">85%</span>
-                            </div> -->
-                        </div>
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bx-terminal skills__icon' ></i>
-                                <span class="skills__name">Data analysis and machine learning: Tensorflow, Pytorch</span>
+                                <!-- <div class="skills__data">
+                                    <div class="skills__title">
+                                        <h3 class="skills__name">Python</h3>
+                                        <span class="skills__number">85%</span>
+                                    </div>
+                                    <div class="skills__bar">
+                                        <span class="skills__percentage skills__python"></span>
+                                    </div>
+                                </div> -->
+
                             </div>
-                            <!-- <div class="skills__bar skills__js">
-                                
-                            </div> -->
-                            <!-- <div>
-                                <span class="skills__percentage">65%</span>
-                            </div> -->
                         </div>
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bx-git-branch skills__icon'></i>
-                                <span class="skills__name">Collaborative software development: Linux, Git</span>
-                            </div>
-                            <!-- <div class="skills__bar skills__ux">
-                                
-                            </div> -->
-                            <!-- <div>
-                                <span class="skills__percentage">85%</span>
-                            </div> -->
-                        </div>
-                    </div>
-                    
-                    <div>              
-                        <img src="assets/img/work3.jpg" alt="" class="skills__img">
                     </div>
                 </div>
             </section>
 
-            <!--===== WORK =====-->
-            <section class="work section" id="work">
-                <h2 class="section-title">Recent Work</h2>
-
-                <div class="work__container bd-grid">
-                    <a href="https://github.com/leaf-open/Resume/blob/main/KaiYe_latest.pdf" class="work__img" target="_blank">
-                        <img src="assets/img/work2.jpg" alt="" >
-                        <figcaption>My CV</figcaption>
-                    </a>
-                    <a href="https://ieeexplore.ieee.org/abstract/document/10066402" class="work__img" target="_blank">
-                        <!-- <div class="box box2"><img src="assets/img/p2.png" alt="a balloon"></div> -->
-                        <img src="assets/img/p2.png" alt="" style="height:213px; margin-left: auto; margin-right: auto; width: auto;">
-                        <figcaption>Load Disaggregation</figcaption>
-                    </a>
-                    <a href="https://arxiv.org/abs/2212.08535" class="work__img" target="_blank">
-                        <img src="assets/img/p3.png" alt="" style="height:213px; margin-left: auto; margin-right: auto; width: auto;">
-                        <figcaption>Optimization</figcaption>
-                    </a>
-                    <a href="https://arxiv.org/abs/2212.04886" class="work__img" target="_blank">
-                        <img src="assets/img/p5.png" alt="" style="height:213px; margin-left: auto; margin-right: auto; width: auto;">
-                        <figcaption>Machine Learning</figcaption>
-                    </a>
-                    <a href="https://leafopen.wordpress.com/blogs/" class="work__img" target="_blank">
-                        <img src="assets/img/work1.jpg" alt="">
-                        <figcaption>Blogs</figcaption>
-                    </a>
-                    <a href="leafopen.wordpress.com/interests/" class="work__img" target="_blank">
-                        <img src="assets/img/work6.jpg" alt="">
-                        <figcaption>About me</figcaption>
-                    </a>
-                </div>
-            </section>
-
-            <!--===== CONTACT =====-->
+            <!--==================== CONTACT ME ====================-->
             <section class="contact section" id="contact">
-                <h2 class="section-title">Contact</h2>
+                <h2 class="section__title">Contact Me</h2>
+                <span class="section__subtitle">Get in touch</span>
 
-                <div class="contact__container bd-grid">
-                    <form action="" class="contact__form">
-                        <input type="text" placeholder="Name" class="contact__input">
-                        <input type="mail" placeholder="Email" class="contact__input">
-                        <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
-                        <a href="mailto: kye3@ncsu.edu" target="_blank" class="contact__button button">Send</a>
-                        <!-- <input type="button" value="Send" class="contact__button button"> -->
+                <div class="contact__container container grid">
+                    <div>
+                        <div class="contact__information">
+                            <a href="https://wa.me/" target="_blank" class="contact__icon"><i class="uil uil-phone"></i></a>
+                            <div>
+                                <h3 class="contact__title">Call me</h3>
+                                <span class="contact__subtitle">+1-X1X-IU0A0UI</span>
+                            </div>
+                        </div>
+
+                        <div class="contact__information">
+                            <a href="mailto: kye3@ncsu.edu" target="_blank" class="contact__icon"><i class="bx bx-envelope"></i></a>
+                            
+                            <div>
+                                <h3 class="contact__title">Email</h3>
+                                <span class="contact__subtitle">kye3@ncsu.edu</span>
+                            </div>
+                        </div>
+
+                        <div class="contact__information">
+                            <a href="https://goo.gl/maps/niCxP9pUTJKmLfSy8" target="_blank" class="contact__icon"><i class="uil uil-map-marker"></i></a>
+
+                            <div>
+                                <h3 class="contact__title">Location</h3>
+                                <span class="contact__subtitle">FREEDM Systems Center <br> North Carolina State University <br> Suite 100, Keystone Science Center <br>1791 Varsity Drive <br> Raleigh, NC 27606</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
                         <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=U3D4GGh-jupj9Yr48IRlGed3G3mBaIQunsLL2YU9ZEw"></script>
-<!--                         <a href="https://clustrmaps.com/site/1bvui" title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=U3D4GGh-jupj9Yr48IRlGed3G3mBaIQunsLL2YU9ZEw&cl=ffffff"></a> -->
-                    </form>
+                        <!-- <a href="https://clustrmaps.com/site/1bvui" title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=U3D4GGh-jupj9Yr48IRlGed3G3mBaIQunsLL2YU9ZEw&cl=ffffff"></a> -->
+                        <span class="contact__subtitle-map">Visitors Map</span>
+                    </div>
+
+                    <!-- <form action="" class="contact__form grid">
+                        <div class="contact__inputs grid">
+                            <div class="contact__content">
+                                <label for="" class="contact__label">Name</label>
+                                <input type="text" class="contact__input">
+                            </div>
+                            <div class="contact__content">
+                                <label for="" class="contact__label">Email</label>
+                                <input type="email" class="contact__input">
+                            </div>
+                        </div>
+
+                        <div class="contact__content">
+                            <label for="" class="contact__label">Project</label>
+                            <input type="text" class="contact__input">
+                        </div>
+
+                        <div class="contact__content">
+                            <label for="" class="contact__label">Message</label>
+                            <textarea name="" id="" cols="0" rows="7" class="contact__input"></textarea>
+                        </div>
+
+                        <div>
+                            <a href="#" class="button button--flex">
+                                Send Message
+                                <i class="uil uil-mesage button__icon"></i>
+                            </a>
+                        </div>
+                    </form> -->
                 </div>
             </section>
         </main>
 
-        <!--===== FOOTER =====-->
+        <!--==================== FOOTER ====================-->
         <footer class="footer">
-            <p class="footer__title">@<a href="https://ece.ncsu.edu/" target="_blank" style="color:white;">NC State University</a></p>
-            <div class="footer__social">
-                <a href="https://facebook.com/ncstateece"  target="_blank" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
-                <a href="https://www.linkedin.com/school/nc-state-electrical-&-computer-engineering/" target="_blank"  class="footer__icon"><i class='bx bxl-linkedin' ></i></a>
-                <a href="http://twitter.com/ncstateece"  target="_blank" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
-            </div>
-            <p class="footer__copy">&#169; Bedimcode. All rigths reserved</p>
-        </footer>
+            <div class="footer__bg">
+                <div class="footer__container container grid">
+                    <div>
+                        <h1 class="footer__title">Kai Ye</h1>
+                        <span class="footer__subtitle">PhD Candidate @NC State</span>
+                    </div>
 
+                    <ul class="footer__links">
+                        <li>
+                            <a href="#skills" class="footer__link">Skills</a>
+                        </li>
+                        <li>
+                            <a href="#portfolio" class="footer__link">Work</a>
+                        </li>
+                        <li>
+                            <a href="#about" class="footer__link">About</a>
+                        </li>
+                    </ul>
+
+                    <div class="footer__socials">
+                        <a href="https://facebook.com/ncstateece"  target="_blank" class="footer__social"><i class='bx bxl-facebook' ></i></a>
+                        <a href="https://www.linkedin.com/school/nc-state-electrical-&-computer-engineering/" target="_blank"  class="footer__social"><i class='bx bxl-linkedin' ></i></a>
+                        <a href="http://twitter.com/ncstateece"  target="_blank" class="footer__social"><i class='bx bxl-twitter' ></i></a>
+                    </div>
+                </div>
+                <p class="footer__copy">&#169; Bedimcode. All rigths reserved</p>
+            </div>
+        </footer>
+        
+        <!--==================== SCROLL TOP ====================-->
+        <a href="#" class="scrollup" id="scroll-up">
+            <i class="uil uil-arrow-up scrollup__icon"></i>
+        </a>
 
         <!--===== SCROLL REVEAL =====-->
         <script src="https://unpkg.com/scrollreveal"></script>
 
-        <!--===== MAIN JS =====-->
+        <!--==================== SWIPER JS ====================-->
+        <script src="assets/js/swiper-bundle.min.js"></script>
+
+        <!--==================== MAIN JS ====================-->
         <script src="assets/js/main.js"></script>
     </body>
 </html>
