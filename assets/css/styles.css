@@ -432,11 +432,24 @@ about__info-name{
 
 .about__buttons{
   display: flex;
+  align-items: center;
   justify-content: center;
+  justify-self: flex-end;
+  column-gap: 1.5rem;
 }
+
 
 .about__button:hover .button__icon{
   transform: translateX(.5rem);
+}
+
+.about__icon {
+  font-size: 1.25rem;
+  color: var(--title-color);
+}
+
+.about__icon:hover {
+  color: var(--first-color);
 }
 
 /*==================== SKILLS ====================*/
